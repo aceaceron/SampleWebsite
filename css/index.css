@@ -231,11 +231,15 @@
     .searchbar input[type="text"] {
         width: 300px;
     }
-
-    .dropdown-menu a {
-        display: block; /* Make dropdown items block-level */
+    .dropdown-menu {
+        top: 70px;
+        width: 90%;
     }
-
+    .dropdown-menu a {
+        display: inline-flex; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
     .navbar .faq-link {
         text-align: center;
         margin-top: auto
@@ -244,7 +248,7 @@
         height: auto;
     }
     .headergallery .galleryitem {
-        height: 300px; /* Set a fixed height for each gallery item */
+        height: 500px; /* Set a fixed height for each gallery item */
     }
     
     .headergallery .galleryitem a img {
@@ -252,20 +256,14 @@
         height: 100%;
         object-fit: cover;
     }
-    
     .headergallery .galleryitem a h1 {
         font-size: 20px; /* Adjust font size as needed */
     }
-    .nav-button-left {
-        top: 25%;
+    .nav-button-left, .nav-button-right {
+        display: none;
     }
-    
-    .nav-button-right {
-        top: 25%;
-    }
-
-    .intro {
-        font-size: large;
+        .intro {
+        font-size: 40px;
     }
     .container .items {
         width: 100%;
