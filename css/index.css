@@ -204,7 +204,7 @@
     .navbar {
         flex-direction: column; /* Stack items vertically */
         align-items: flex-start; /* Align items to the start */
-        height: 20px;
+        height: 50px;
     }
 
     .navbar a {
@@ -214,7 +214,7 @@
     .dropdown-toggle {
         display: flex; /* Show the toggle button */
         position: fixed;
-        top: 0;
+        top: 15px;
     }
 
     .dropdown-menu {
@@ -226,7 +226,10 @@
         margin-right: auto;
     }
     .searchbar {
-        top: auto;
+        top: 25px;
+    }
+    .searchbar input[type="text"] {
+        width: 300px;
     }
 
     .dropdown-menu a {
