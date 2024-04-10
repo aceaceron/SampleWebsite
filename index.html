@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Watch Wrestling</title>
+</head>
+<body>
+    <header>
+        
+        <nav class="navbar">
+            <div class="dropdown-toggle" onclick="toggleDropdown()"><i class="fas fa-bars"></i></div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="wwe-raw.html"><img src="img/wwe-raw-logo.png" title="Watch WWE Raw!"></a>
+                <a href="wwe-sd.html"><img src="img/wwe-sd-logo.png" title="Watch WWE SmackDown!"></a>
+                <a href="aew-dynamite.html"><img src="img/aew-dynamite-logo.png" title="Watch AEW Dynamite"></a>
+                <a href="wwe-ple.html"><img src="img/wwe-ple-logo.png" title="Watch WWE Premium Live Events"></a>
+                <a href="aew-ppv.html"><img src="img/aew-ppv-logo.png" title="Watch AEW Pay-Per-View"></a>
+                <div class="navbar-link">
+                    <a href="faq.html" class="faq-link">Request / FAQ</a>
+                </div>
+            </div>
+            
+        </nav>
+        <form class="searchbar" action="/search" method="get">
+            <input type="text" name="query" placeholder="Search...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="headergallery">
+            <button class="nav-button nav-button-left" onclick="scrollGallery(-1.01)">&lt;</button>
+            <button class="nav-button nav-button-right" onclick="scrollGallery(1.01)">&gt;</button>   
+
+            <div class="galleryitem">
+                <a href="html-wwe-raw/wwe-raw-24-04-09.html">
+                    <img src="img/wwe-raw-24-04-09-bg01.jpg" alt="WWE Raw: April 9, 2024" title="WWE Raw: April 9, 2024">
+                    <h1>WWE RAW<br>April 9, 2024</h1>
+                </a>
+            </div>
+            <div class="galleryitem">
+                <a href="html-wwe-raw/wwe-wm40-n2.html">
+                    <img src="img/wwe-wm-40-bg01.jpg" alt="WWE WrestleMania 40 Night 2" title="WWE WrestleMania 40 Night 2">
+                    <h1>WWE WrestleMania 40 Night 2<br>April 8, 2024</h1>
+                </a>  
+            </div>
+            <div class="galleryitem">
+                <a href="html-wwe-ple/wwe-wm40-n1.html">
+                    <img src="img/wwe-wm-40-n1-bg01.jpg" alt="WWE WrestleMania 40 Night 1" title="WWE WrestleMania 40 Night 1">
+                    <h1>WWE WrestleMania 40 Night 1<br>April 7, 2024</h1>
+                </a>
+            </div> 
+            <div class="galleryitem">
+                <a href="html-wwe-ple/wwe-nxt-sad-2024.html">
+                    <img src="img/wwe-nxt-sad-2024.jpg" alt="WWE NXT Stand and Deliver 2024" title="WWE NXT Stand and Deliver 2024">
+                    <h1>WWE NXT Stand and Deliver<br>April 7, 2024</h1>
+                </a>
+            </div>   
+        </div>
+    </header>
+
+    <main>
+        <div class="intro">WATCH THE RECENT EVENTS</div>
+        <div class="container">
+            <div class="items">
+                <div class="item"><a href="html-wwe-raw/wwe-raw-24-04-09.html"><img src="img/wwe-raw-24-04-09-bg01.jpg"></a><p>WWE RAW - April 9, 2024</p></div>
+            </div>
+            <div class="items">
+                <div class="item"><a href="html-wwe-ple/wwe-wm40-n2.html"><img src="img/wwe-wm-40-bg01.jpg"></a><p>WWE WrestleMania 40 Night 2</p></div>
+            </div>
+            <div class="items">
+                <div class="item"><a href="html-wwe-ple/wwe-wm40-n1.html"><img src="img/wwe-wm-40-n1-bg01.jpg"></a><p>WWE WrestleMania 40 Night 1</p></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="items">
+                <div class="item"><a href="html-wwe-raw/wwe-raw-24-04-09.html"><img src="img/wwe-nxt-sad-2024.jpg"></a><p>WWE NXT Stand and Deliver 2024</p></div>
+            </div>
+            <div class="items">
+                <div class="item"><a href="html-wwe-ple/wwe-wm40-n2.html"><img src="img/wwe-hof-2024-bg01.jpg"></a><p>WWE Hall of Fame 2024</p></div>
+            </div>
+            <div class="items">
+                <div class="item"><a href="html-wwe-ple/wwe-wm40-n1.html"><img src="img/wwe-sd-bg01.jpg"></a><p>WWE SmackDown - April 6, 2024</p></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function scrollGallery(direction) {
+            const galleryContent = document.querySelector('.headergallery');
+            const galleryItems = document.querySelectorAll('.galleryitem');
+            const galleryItemWidth = galleryItems[0].offsetWidth;
+            const scrollAmount = direction * galleryItemWidth;
+
+            galleryContent.scrollTo({
+                left: galleryContent.scrollLeft + scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Function to toggle visibility of dropdown menu
+        function toggleDropdown() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.classList.toggle('show');
+        }
+
+        // Close dropdown menu when clicking outside
+        window.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target) && dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+
+    </script>
+</body>
+</html>

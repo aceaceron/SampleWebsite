@@ -1,0 +1,274 @@
+/* Global styles */
+* {
+    font-family: 'Arial';
+}
+
+/* Styles for search bar */
+
+.searchbar {
+    position: fixed;
+    z-index: 9999;
+    top: 30px;
+    right: 10px;
+    transition: top 0.5s ease;
+}
+.searchbar input[type="text"] {
+    padding: 10px 20px; /* Add padding to the input */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Round the corners */
+    font-size: 16px; /* Set the font size */
+}
+
+.searchbar button[type="submit"] {
+    padding: 10px 16px; /* Add padding to the button */
+    background-color: gray; /* Set the background color */
+    color: white; /* Set the text color */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Round the corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 16px; /* Set the font size */
+    margin-left: 5px; /* Add some space between input and button */
+    transition: background-color 0.5s ease;
+}
+
+.searchbar button[type="submit"]:hover {
+    background-color: lightgray; /* Darken the background color on hover */
+    color: black;
+}
+
+/* Styles for navigation bar */
+.navbar {
+    display: flex;
+    justify-content: flex-start /* Distribute items evenly along the main axis */
+    align-items: center; /* Center items vertically */
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    padding: 20px;
+    z-index: 1;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    transition: height 0.5s ease;
+}
+
+.navbar a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a img {
+    width: 100px;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    transition: transform 0.3s ease;
+    shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Text shadow */
+}
+
+/* Styles for dropdown menu */
+.dropdown-menu {
+    display: flex; /* Hide the dropdown menu by default */
+    width: 100;
+}
+
+.dropdown-menu.show {
+    display: block; /* Show the dropdown menu when it has the 'show' class */
+}
+
+.dropdown-toggle {
+    color: white;
+    display: none;
+    margin-top: 10px;
+    font-size: 40px;
+    transition: display 0.5s ease;
+}
+
+/* Styles for FAQ link */
+.navbar .faq-link {
+    color: #fff;
+    text-decoration: none;
+    margin-top: 25px;
+}
+
+/* Styles for header gallery */
+.headergallery {
+    width: 100%;
+    height: auto%;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    transition: height 0.5s ease;
+}
+
+.headergallery .galleryitem {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    height: 600px; /* Set a fixed height for each gallery item */
+}
+
+.headergallery .galleryitem a img {
+    width: 100%;
+    height: fit-content;
+}
+
+.headergallery .galleryitem a h1 {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 45%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Text shadow */
+    font-size: 28px; /* Adjust font size as needed */
+    text-align: left; /* Center align the text */
+    width: 80%; /* Set a width for better text wrapping */
+    margin: 0 auto; /* Center the text horizontally */
+}
+
+/* Styles for navigation buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.nav-button-left {
+    left: 0;
+}
+
+.nav-button-right {
+    right: 0;
+}
+
+/* Styles for intro section */
+.intro {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Styles for item containers */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.items {
+    padding: 15px;
+    width: 30%;
+    display: flex;
+}
+
+.item img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.item p {
+    text-align: center;
+    color: black;
+}
+
+/* Hover effects */
+.navbar a:hover img {
+    transform: scale(1.1);
+}
+
+.item img:hover {
+    transform: scale(1.05);
+}
+
+.navbar .faq-link:hover {
+    color: red;
+}
+
+/* Media queries */
+@media screen and (max-width: 1000px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        height: 20px;
+    }
+
+    .navbar a {
+        display: block; /* Display all <a> tags */
+    }
+
+    .dropdown-toggle {
+        display: flex; /* Show the toggle button */
+        position: fixed;
+        top: 0;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: relative;
+        width: auto; /* Make dropdown menu full-width */
+        text-align: left; /* Align items to the left */
+        background-color: black;
+        margin-right: auto;
+    }
+    .searchbar {
+        top: auto;
+    }
+
+    .dropdown-menu a {
+        display: block; /* Make dropdown items block-level */
+    }
+
+    .navbar .faq-link {
+        text-align: center;
+        margin-top: auto
+    }
+    .headergallery {
+        height: auto;
+    }
+    .headergallery .galleryitem {
+        height: 300px; /* Set a fixed height for each gallery item */
+    }
+    
+    .headergallery .galleryitem a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .headergallery .galleryitem a h1 {
+        font-size: 20px; /* Adjust font size as needed */
+    }
+    .nav-button-left {
+        top: 25%;
+    }
+    
+    .nav-button-right {
+        top: 25%;
+    }
+
+    .intro {
+        font-size: large;
+    }
+    .container .items {
+        width: 100%;
+        padding: 5px;
+    }
+    .container .items .item{
+       font-size: small;
+    }
+}
